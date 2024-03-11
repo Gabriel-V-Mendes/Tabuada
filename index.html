@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Angkor&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+</head>
+
+<body>
+
+    <h1>Escola do IOS</h1>
+
+   <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2pnNzBsZWE0Z2RhOXh6cmNseWd0cXp6cTJyejN5bjBxZGltaDNkdSZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/sSCRwK5QtfRgQ/giphy.gif" alt="">
+
+    <div id="container">
+        <h2 class="titulo">Gerador de Tabuada</h2>
+        <input type="number" id="numInput" placeholder="Digite um numero" class="digite">
+        <button class="botao" onclick="geradorTabuada()">Gerar Tabuada</button>
+        <div id="tabuada"></div>
+    </div>
+
+
+    <script>
+        function geradorTabuada() {
+            var numInput = document.getElementById("numInput").value;
+            var tabuadaDiv = document.getElementById("tabuada");
+            tabuadaDiv.innerHTML = "";
+
+            if (!numInput || isNaN(numInput)) {
+                tabuadaDiv.innerHTML = "<p>Por favor, insira um numero valido.</p>";
+                return;
+            }
+
+
+            var tableHTML = "<h3>Tabuada de" + numInput
+                + "</h3><table border='1'><tr><Numero</th><th>Resultado</th></tr>";
+
+            for (var i = 1; i <= 10; i++) {
+                tableHTML += "<tr><td>" + numInput + " x " + i + "</td><td>" + (numInput * i) + "</td></tr>";
+            }
+
+            tableHTML += "</table>";
+            tabuadaDiv.innerHTML = tableHTML;
+        }
+    </script>
+
+    <footer>
+        <p>Desenvolvido por Gabriel-v-Mendes &copy;</p>
+        <p><a href="https://ead.ios.org.br/login/index.php">Instituto da Oportunidade Social</a></p>
+    </footer>
+
+</body>
+
+</html>
